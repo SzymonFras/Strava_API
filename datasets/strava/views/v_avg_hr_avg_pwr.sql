@@ -1,0 +1,1 @@
+SELECT start_date_local, average_heartrate, weighted_average_watts FROM `project-bedff666-ec4c-42c0-ba7.strava.activities_v1` where average_heartrate is not null and weighted_average_watts is not null
