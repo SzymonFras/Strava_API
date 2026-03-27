@@ -1,0 +1,1 @@
+SELECT start_date_local, average_heartrate, weighted_average_watts FROM `{project_id}.dataset.table_main` where average_heartrate is not null and weighted_average_watts is not null
