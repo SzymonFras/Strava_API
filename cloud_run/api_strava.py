@@ -3,9 +3,6 @@ import time
 import json
 import requests
 import os
-#from config import strava_keys as sk
-#def strava_keys():
-#    return sk()
 def get_access_token(client_id, client_secret, refresh_token):
     r = requests.post(
         "https://www.strava.com/oauth/token",
