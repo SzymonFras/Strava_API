@@ -5,7 +5,7 @@ def sync_strava_activities(request):
         Cloud Function: pobiera nowe aktywności ze Stravy od ostatniego start_date
         w BigQuery i wstawia je do głównej tabeli bez duplikatów.
         """
-    # 1. Pobierz nowe aktywności
+    # 1. Download new activities
     try:
         df_new = prepare_data()
 
