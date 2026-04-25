@@ -12,8 +12,6 @@ def get_date(client=client()):
     return next(result).max_date
 def upsert_activities(df,client=client(),staging_table=table_stage(),target_table=table()):
     client.load_table_from_dataframe(df, staging_table).result()
-
-    # 2. MERGE do target: tylko nowe id
     merge_query = f"""
     MERGE `{target_table}` T
     USING `{staging_table}` S
@@ -23,5 +21,4 @@ def upsert_activities(df,client=client(),staging_table=table_stage(),target_tabl
     """
     client.query(merge_query).result()
 
-    # 3. Opróżnij staging
     client.query(f"TRUNCATE TABLE `{staging_table}`").result()
