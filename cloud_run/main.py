@@ -11,5 +11,5 @@ def sync_strava_activities(request):
 
         return {"status": "ok", "new_rows": len(df_new)}
     except Exception as e:
-        print(f"BŁĄD: {str(e)}") # To pojawi się w Logs Explorer
+        print(f"BŁĄD: {str(e)}")
         return {"status": "error", "message": str(e)}, 500
