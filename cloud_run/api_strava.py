@@ -16,7 +16,6 @@ def get_access_token(client_id, client_secret, refresh_token):
     r.raise_for_status()
     return r.json()["access_token"]
 def fetch_all_activities(token, after_date):
-    #after = int(datetime.strptime(after_date, "%Y-%m-%d").timestamp())
     page = 1
     activities = []
 
